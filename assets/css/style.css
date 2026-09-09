@@ -2,7 +2,7 @@
 
 :root {
   --max-width: 900px;
-  --color-bg-navy: #0f172a;
+  --color-bg-charcoal: #1c1917;
   --color-bg-teal: #0d3b3e;
   --color-bg-emerald: #065f46;
   --color-text: #e6edf3;
@@ -38,7 +38,7 @@ body {
   position: relative;
   background: radial-gradient(ellipse at top left, #123a3d 0%, transparent 55%),
     radial-gradient(ellipse at bottom right, #0a4a3a 0%, transparent 55%),
-    linear-gradient(135deg, var(--color-bg-navy) 0%, var(--color-bg-teal) 55%, var(--color-bg-emerald) 100%);
+    linear-gradient(135deg, var(--color-bg-charcoal) 0%, var(--color-bg-teal) 55%, var(--color-bg-emerald) 100%);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -127,7 +127,7 @@ h3 {
 /* ---------- Header / nav ---------- */
 
 .site-header {
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(28, 25, 23, 0.55);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-bottom: 1px solid var(--glass-border);
@@ -327,6 +327,58 @@ section + section {
   margin: 0;
 }
 
+/* ---------- Publications list (horizontal strip layout) ---------- */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.pub-list .publication {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.1rem 1.5rem;
+}
+
+.pub-list .publication .pub-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pub-list .publication .pub-side {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.pub-list .publication .links {
+  margin-top: 0;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .pub-list .publication {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pub-list .publication .pub-side {
+    align-items: flex-start;
+  }
+
+  .pub-list .publication .links {
+    justify-content: flex-start;
+  }
+}
+
 .badge {
   display: inline-block;
   align-self: flex-start;
@@ -448,7 +500,7 @@ section + section {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(28, 25, 23, 0.55);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-top: 1px solid var(--glass-border);
