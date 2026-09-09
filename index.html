@@ -17,7 +17,6 @@
   <header class="site-header">
     <nav class="site-nav">
       <a href="index.html">Home</a>
-      <a href="index.html#research">Research</a>
       <a href="publications.html">Publications</a>
       <a href="activities.html">Activities</a>
       <a href="teaching.html">Teaching</a>
@@ -45,17 +44,35 @@
         </ul>
       </div>
     </div>
+
+    <div class="tag-float">
+      <ul class="tag-row">
+        <!--<li class="tag-group-label">Focus:</li>-->
+        <li class="tag">Privacy-Preserving ML</li>
+        <li class="tag">Machine Unlearning</li>
+        <li class="tag">Speech Recognition</li>
+        <li class="tag">Speaker Verification &amp; Diarization</li>
+      </ul>
+      <!--<ul class="tag-row">
+        <li class="tag-group-label">Tools:</li>
+        <li class="tag">PyTorch</li>
+        <li class="tag">Hugging Face</li>
+        <li class="tag">ESPnet / SpeechBrain</li>
+        <li class="tag">Homomorphic Encryption &amp; MPC</li>
+      </ul>-->
+    </div>
   </section>
 
   <main>
     <section class="content-section glass intro-section">
       <h2>About</h2>
       <p>
-        Postdoctoral researcher at INESC-ID working on deep learning for speech processing, with a focus on
-        privacy-preserving machine learning — voice conversion and anonymization, cryptographic processing, membership inference, and machine
-        unlearning. I also focus on other speech processing tasks, including automatic speech recognition, speaker recognition and diarization, and pathological speech detection.
-        I hold a PhD from Instituto Superior Técnico, University of Lisbon (2024), including a visiting research period at Carnegie Mellon University, 
-        and I currently lead the LeaF project as Principal Investigator, studying machine unlearning in speech foundation models.
+        I'm a postdoctoral researcher at INESC-ID building privacy-preserving speech AI — from voice anonymization
+        and cryptographic protocols to membership inference and machine unlearning — alongside broader work on
+        speech recognition, speaker diarization, and pathological speech detection. I hold a PhD from Instituto
+        Superior Técnico, University of Lisbon (2024), spent time as a visiting researcher at Carnegie Mellon
+        University, and now lead the LeaF project as Principal Investigator, studying how to make speech
+        foundation models forget.
       </p>
     </section>
 
@@ -68,7 +85,7 @@
         </li>
         <li class="news-item">
           <span class="news-date">2026</span>
-          <p>"Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR." accepted at <em>Interspeech 2026</em>.</p>
+          <p>"Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR" accepted at <em>Interspeech 2026</em>.</p>
         </li>
         <li class="news-item">
           <span class="news-date">2026</span>
@@ -76,7 +93,7 @@
         </li>
         <li class="news-item">
           <span class="news-date">November 2025</span>
-          <p>Started as Principal Investigator of <strong>LeaF</strong>, a CMU Portugal exploratory research project on machine unlearning in speech foundation models. See <a href="activities.html">Activities</a>.</p>
+          <p>Started as Principal Investigator of <strong>LeaF</strong>, a CMU Portugal exploratory research project on machine unlearning in speech foundation models.</p>
         </li>
       </ul>
     </section>
@@ -84,21 +101,21 @@
     <section class="content-section" id="research">
       <h2>Research focus</h2>
       <div class="card-grid">
-        <div class="focus-card glass">
+        <div class="focus-card glass featured">
           <h3>Privacy-preserving ML &amp; speaker anonymization</h3>
           <p class="description">Protecting speaker privacy in speech data and systems through voice anonymization methods, information disentanglement, and cryptographic protocols such as Fully Homomorphic Encryption and Secure Multi-Party Computation.</p>
         </div>
         <div class="focus-card glass">
-          <h3>Machine unlearning &amp; Membership Inference</h3>
-          <p class="description">Auditing speech model vulnerabilities to membership inference attacks, and developing methods to make speech models forget user data as Principal Investigator of LeaF (CMU Portugal).</p>
+          <h3>Machine unlearning &amp; membership inference</h3>
+          <p class="description">Developing methods to make speech foundation models forget specific training data on request, and auditing model vulnerability to membership inference attacks.</p>
         </div>
         <div class="focus-card glass">
           <h3>Pathological speech detection</h3>
-          <p class="description">Using speech to detect and assess pathological conditions, contributing to early diagnosis and monitoring of speech-related disorders.</p>
+          <p class="description">Detecting and monitoring conditions such as Parkinson's disease and cognitive impairment directly from speech, contributing to earlier, non-invasive diagnosis.</p>
         </div>
         <div class="focus-card glass">
           <h3>Speech recognition for European Portuguese</h3>
-          <p class="description">Developing speech data resources and models for European Portuguese.</p>
+          <p class="description">Building state-of-the-art ASR benchmarks and open speech resources for European Portuguese, including the CAMÕES benchmark and the 5,000-hour FalAR corpus.</p>
         </div>
       </div>
     </section>
@@ -106,7 +123,7 @@
     <section class="content-section">
       <h2>Explore</h2>
       <div class="card-grid">
-        <a class="explore-card glass" href="publications.html">
+        <a class="explore-card glass featured" href="publications.html">
           <h3>Publications</h3>
           <p class="description">Peer-reviewed papers on speech privacy, recognition, and related topics.</p>
         </a>
@@ -135,8 +152,8 @@
 
     <section class="content-section glass contact-cta" id="contact">
       <h2>Get in touch</h2>
+      <p>Open for research collaborations, invited talks, applied speech and privacy AI work.</p>
       <ul class="hero-ctas">
-        <p>Open for research collaborations, invited talks, applied speech and privacy AI work.</p>
         <li><a href="mailto:fsepteixeira@proton.me">Email me</a></li>
         <li><a href="https://www.linkedin.com/in/francisco-teixeira-3a6396144/">LinkedIn</a></li>
       </ul>

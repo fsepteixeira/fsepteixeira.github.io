@@ -14,7 +14,7 @@
   /* single understated accent, used sparingly throughout */
   --color-accent: #8a4a35;
   --color-accent-dark: #6e3a29;
-  --color-accent-tint: rgba(138, 74, 53, 0.08);
+  --color-accent-tint: rgba(168, 129, 115, 0.16);
   --color-rule: rgba(28, 30, 30, 0.14);
   --color-rule-accent: rgba(138, 74, 53, 0.4);
   --radius: 0.3rem;
@@ -134,7 +134,7 @@ main {
 }
 
 .hero + main {
-  padding-top: 1.5rem;
+  padding-top: 0.75rem;
 }
 
 section + section {
@@ -196,6 +196,47 @@ section + section {
   font-size: 1.2rem;
   color: var(--color-text-muted);
   margin: 0 0 1.75rem;
+}
+
+.tag-float {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tag-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tag-group-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-right: 0.15rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-rule-accent);
+  color: var(--color-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .hero-ctas {
@@ -277,6 +318,11 @@ section + section {
   flex-direction: column;
   gap: 0.5rem;
   transition: border-color 0.2s ease;
+}
+
+.featured {
+  /* border-color: var(--color-accent) !important; */
+  background: var(--color-accent-tint);
 }
 
 .focus-card h3,
@@ -488,7 +534,12 @@ section + section {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-rule-accent);
+}
+
+.timeline-entry.is-past::before {
+  background: var(--color-page-bg);
+  border: 2px solid var(--color-rule-accent);
 }
 
 .timeline-entry .date {
