@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Francisco Teixeira</title>
+  <title>Francisco Teixeira — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -13,88 +16,130 @@
   </div>
   <header class="site-header">
     <nav class="site-nav">
-      <a href="index.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#research">Research</a>
       <a href="publications.html">Publications</a>
       <a href="activities.html">Activities</a>
       <a href="teaching.html">Teaching</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="projects.html">Open Source</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-inner glass">
       <!-- TODO: replace with a real headshot, e.g. <img src="assets/img/headshot.jpg" alt="Photo of Francisco Teixeira"> -->
-      <div class="hero-avatar" aria-hidden="true">FT</div>
+      <div class="hero-avatar">
+        <img src="assets/img/photo.png" alt="Photo of Francisco Teixeira">
+      </div>
       <div class="hero-content">
         <h1>Francisco Teixeira</h1>
-        <p class="hero-tagline">Postdoctoral Researcher — Speech Processing &amp; Privacy-Preserving ML</p>
+        <p class="hero-tagline">Building privacy-preserving speech AI — from anonymization to machine unlearning, cryptographic processing, and beyond.</p>
         <ul class="hero-ctas">
           <!-- TODO: replace with a hosted CV PDF URL once available -->
           <li><a href="cv.pdf">CV</a></li>
           <li><a href="https://scholar.google.com/citations?user=UYrQuTcAAAAJ&hl=en-EN">Google Scholar</a></li>
           <li><a href="https://www.linkedin.com/in/francisco-teixeira-3a6396144/">LinkedIn</a></li>
           <li><a href="https://github.com/fsepteixeira">GitHub</a></li>
-          <li><a href="mailto:francisco.sep.teixeira@gmail.com">Email</a></li>
+          <li><a href="mailto:fsepteixeira@proton.me">Email</a></li>
         </ul>
       </div>
     </div>
   </section>
 
   <main>
-    <section class="stat-strip">
-      <div class="stat-block glass">
-        <span class="stat-number">24</span>
-        <span class="stat-label">Publications</span>
-      </div>
-      <div class="stat-block glass">
-        <span class="stat-number">5,000+</span>
-        <span class="stat-label">Hours of speech in FalAR corpus</span>
-      </div>
-      <div class="stat-block glass">
-        <span class="stat-number">2024</span>
-        <span class="stat-label">PhD awarded</span>
-      </div>
-      <div class="stat-block glass">
-        <span class="stat-number">3</span>
-        <span class="stat-label">MSc theses supervised</span>
+    <section class="content-section glass intro-section">
+      <h2>About</h2>
+      <p>
+        Postdoctoral researcher at INESC-ID working on deep learning for speech processing, with a focus on
+        privacy-preserving machine learning — voice conversion and anonymization, cryptographic processing, membership inference, and machine
+        unlearning. I also focus on other speech processing tasks, including automatic speech recognition, speaker recognition and diarization, and pathological speech detection.
+        I hold a PhD from Instituto Superior Técnico, University of Lisbon (2024), including a visiting research period at Carnegie Mellon University, 
+        and I currently lead the LeaF project as Principal Investigator, studying machine unlearning in speech foundation models.
+      </p>
+    </section>
+
+    <section class="content-section" id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026</span>
+          <p>"Evaluating Parkinson’s Disease Detection in Anonymized Speech: A Performance and Acoustic Analysis" accepted at the <em>Symposium on Security and Privacy in Speech Communication</em>, co-located with Interspeech 2026.</p>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026</span>
+          <p>"Exploring the potential and limitations of Model Merging for Multi-Domain Adaptation in ASR." accepted at <em>Interspeech 2026</em>.</p>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026</span>
+          <p>"FalAR: A Large-scale Speaker-Annotated European Portuguese Speech Corpus of Parliamentary Sessions" published and presented at <em>LREC 2026</em>.</p>
+        </li>
+        <li class="news-item">
+          <span class="news-date">November 2025</span>
+          <p>Started as Principal Investigator of <strong>LeaF</strong>, a CMU Portugal exploratory research project on machine unlearning in speech foundation models. See <a href="activities.html">Activities</a>.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-section" id="research">
+      <h2>Research focus</h2>
+      <div class="card-grid">
+        <div class="focus-card glass">
+          <h3>Privacy-preserving ML &amp; speaker anonymization</h3>
+          <p class="description">Protecting speaker privacy in speech data and systems through voice anonymization methods, information disentanglement, and cryptographic protocols such as Fully Homomorphic Encryption and Secure Multi-Party Computation.</p>
+        </div>
+        <div class="focus-card glass">
+          <h3>Machine unlearning &amp; Membership Inference</h3>
+          <p class="description">Auditing speech model vulnerabilities to membership inference attacks, and developing methods to make speech models forget user data as Principal Investigator of LeaF (CMU Portugal).</p>
+        </div>
+        <div class="focus-card glass">
+          <h3>Pathological speech detection</h3>
+          <p class="description">Using speech to detect and assess pathological conditions, contributing to early diagnosis and monitoring of speech-related disorders.</p>
+        </div>
+        <div class="focus-card glass">
+          <h3>Speech recognition for European Portuguese</h3>
+          <p class="description">Developing speech data resources and models for European Portuguese.</p>
+        </div>
       </div>
     </section>
 
-    <div class="about-split">
-      <section class="about-bio content-section glass">
-        <p>
-          Postdoctoral researcher working on deep learning systems for speech processing. My main expertise
-          spans privacy-preserving machine learning — including voice conversion and anonymization, membership
-          inference, and machine unlearning — as well as speech recognition, speaker recognition, and speaker
-          diarization. I recently co-developed CAMÕES, an evaluation benchmark and set of state-of-the-art
-          open-source ASR models for European Portuguese, and led the collection of FalAR, a 5,000-hour
-          speaker-annotated speech corpus (available on Hugging Face). I also recently participated in the
-          development of SVeritas, a robustness benchmark for automatic speaker verification. I am currently
-          the Principal Investigator of the LeaF project (CMU Portugal), focused on machine unlearning in
-          speech foundation models. I hold a PhD from INESC-ID / Instituto Superior Técnico, University of
-          Lisbon (2024), with a visiting research period at the Language Technologies Institute, Carnegie
-          Mellon University.
-        </p>
-      </section>
+    <section class="content-section">
+      <h2>Explore</h2>
+      <div class="card-grid">
+        <a class="explore-card glass" href="publications.html">
+          <h3>Publications</h3>
+          <p class="description">Peer-reviewed papers on speech privacy, recognition, and related topics.</p>
+        </a>
+        <a class="explore-card glass" href="activities.html">
+          <h3>Activities</h3>
+          <p class="description">Long-term roles, appointments, and community service.</p>
+        </a>
+        <a class="explore-card glass" href="teaching.html">
+          <h3>Teaching</h3>
+          <p class="description">Courses taught and student supervision.</p>
+        </a>
+        <a class="explore-card glass" href="projects.html">
+          <h3>Open Source</h3>
+          <p class="description">Code repositories and data resources I have contributed to.</p>
+        </a>
+        <!--<a class="explore-card glass" href="https://github.com/fsepteixeira">
+          <h3>GitHub</h3>
+          <p class="description">Source code and open-source releases.</p>
+        </a>
+        <a class="explore-card glass" href="#contact">
+          <h3>Contact</h3>
+          <p class="description">Ways to get in touch.</p>
+        </a>-->
+      </div>
+    </section>
 
-      <aside class="quick-facts content-section glass">
-        <h2>Quick facts</h2>
-        <dl>
-          <dt>PhD</dt>
-          <dd>Instituto Superior Técnico (2024)</dd>
-
-          <dt>Postdoctoral Researcher</dt>
-          <dd>INESC-ID</dd>
-
-          <dt>Principal Investigator</dt>
-          <dd>LeaF (CMU Portugal)</dd>
-
-          <dt>Visiting Researcher</dt>
-          <dd>Carnegie Mellon University</dd>
-        </dl>
-      </aside>
-    </div>
+    <section class="content-section glass contact-cta" id="contact">
+      <h2>Get in touch</h2>
+      <ul class="hero-ctas">
+        <li><a href="mailto:fsepteixeira@proton.me">Email me</a></li>
+        <li><a href="https://www.linkedin.com/in/francisco-teixeira-3a6396144/">LinkedIn</a></li>
+      </ul>
+    </section>
   </main>
 
 

@@ -2,22 +2,24 @@
 
 :root {
   --max-width: 900px;
-  --color-bg-deepblue: #0b2536;
-  --color-bg-teal: #10456b;
-  --color-bg-green: #0f6b4f;
-  --color-text: #e6edf3;
-  --color-text-muted: #a9c4d1;
-  --color-accent-cyan: #22c1c3;
-  --color-accent-green: #34c77b;
-  --color-accent-skyblue: #38bdf8;
-  --glass-bg: rgba(255, 255, 255, 0.07);
-  --glass-bg-strong: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.16);
-  --glass-blur: 14px;
-  --radius: 0.9rem;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.25);
-  --shadow-hover: 0 16px 40px rgba(34, 193, 195, 0.25), 0 4px 12px rgba(0, 0, 0, 0.35);
-  --glow-cyan: 0 0 20px rgba(34, 193, 195, 0.55);
+  /* page background: warm off-white, paper-like */
+  --color-page-bg: #faf8f5;
+  --color-panel-bg: #ffffff;
+  /* flat ink color used for header/footer, not the page background */
+  --color-ink: #1b2a30;
+  --color-text: #24333a;
+  --color-text-muted: #5c6b70;
+  --color-text-on-dark: #f2ede6;
+  --color-text-on-dark-muted: #b9c2c6;
+  /* single understated accent, used sparingly throughout */
+  --color-accent: #8a4a35;
+  --color-accent-dark: #6e3a29;
+  --color-accent-tint: rgba(138, 74, 53, 0.08);
+  --color-rule: rgba(28, 30, 30, 0.14);
+  --color-rule-accent: rgba(138, 74, 53, 0.4);
+  --radius: 0.3rem;
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -30,21 +32,17 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--color-text);
-  line-height: 1.7;
+  line-height: 1.75;
   min-height: 100vh;
   position: relative;
-  background: radial-gradient(ellipse at top left, #123a52 0%, transparent 55%),
-    radial-gradient(ellipse at bottom right, #0f4a3a 0%, transparent 55%),
-    linear-gradient(135deg, var(--color-bg-deepblue) 0%, var(--color-bg-teal) 55%, var(--color-bg-green) 100%);
-  background-attachment: fixed;
-  background-size: cover;
+  background: var(--color-page-bg);
 }
 
 a {
-  color: var(--color-accent-skyblue);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -53,84 +51,45 @@ a:hover {
 }
 
 h1, h2, h3 {
-  line-height: 1.3;
-  font-weight: 700;
-  color: #ffffff;
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-top: 0;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-/* ---------- Glow blobs (decorative, behind content) ---------- */
+/* ---------- Decorative background (kept minimal for editorial look) ---------- */
 
 .bg-glow {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
+  display: none;
 }
 
-.bg-glow .blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
-}
-
-.bg-glow .blob-1 {
-  width: 32rem;
-  height: 32rem;
-  top: -8rem;
-  left: -6rem;
-  background: radial-gradient(circle, var(--color-accent-cyan) 0%, transparent 70%);
-}
-
-.bg-glow .blob-2 {
-  width: 28rem;
-  height: 28rem;
-  bottom: -6rem;
-  right: -6rem;
-  background: radial-gradient(circle, var(--color-accent-green) 0%, transparent 70%);
-}
-
-@media (max-width: 640px) {
-  .bg-glow .blob-1,
-  .bg-glow .blob-2 {
-    width: 16rem;
-    height: 16rem;
-    filter: blur(60px);
-  }
-}
-
-/* ---------- Glass panel utility ---------- */
+/* ---------- Editorial panel utility (hairline border, no blur) ---------- */
 
 .glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-rule);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 
-/* ---------- Header / nav ---------- */
+/* ---------- Header / nav (flat ink bar) ---------- */
 
 .site-header {
-  background: rgba(11, 37, 54, 0.55);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid var(--glass-border);
+  background: var(--color-ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -146,24 +105,22 @@ h3 {
 }
 
 .site-nav a {
-  color: var(--color-text);
+  color: var(--color-text-on-dark);
   font-weight: 500;
   padding-bottom: 0.2rem;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease, text-shadow 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .site-nav a:hover {
-  color: var(--color-accent-skyblue);
+  color: var(--color-text-on-dark);
   text-decoration: none;
-  border-bottom-color: var(--color-accent-green);
-  text-shadow: var(--glow-cyan);
+  border-bottom-color: var(--color-accent);
 }
 
 .site-nav a.active {
-  color: var(--color-accent-skyblue);
-  border-bottom-color: var(--color-accent-green);
-  text-shadow: var(--glow-cyan);
+  color: var(--color-text-on-dark);
+  border-bottom-color: var(--color-accent);
 }
 
 /* ---------- Layout ---------- */
@@ -171,18 +128,22 @@ h3 {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1.25rem;
+  padding: 4rem 1.25rem;
   min-height: 60vh;
 }
 
-section + section {
-  margin-top: 2.5rem;
+.hero + main {
+  padding-top: 1.5rem;
 }
 
-/* ---------- Hero (About page) ---------- */
+section + section {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Hero (Home page) ---------- */
 
 .hero {
-  padding: 3.5rem 1.25rem;
+  padding: 4rem 1.25rem 1.5rem;
 }
 
 .hero-inner {
@@ -200,15 +161,15 @@ section + section {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 3px solid var(--color-accent-green);
-  box-shadow: var(--glow-cyan);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-rule-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--color-accent-skyblue);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-accent);
   overflow: hidden;
 }
 
@@ -223,16 +184,17 @@ section + section {
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin: 0 0 0.4rem;
-  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+  letter-spacing: 0.005em;
 }
 
 .hero-tagline {
   font-size: 1.2rem;
   color: var(--color-text-muted);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
 }
 
 .hero-ctas {
@@ -251,112 +213,92 @@ section + section {
 .hero-ctas a {
   display: inline-block;
   padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-green));
-  color: var(--color-bg-deepblue);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
-  box-shadow: 0 4px 14px rgba(34, 193, 195, 0.3);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .hero-ctas a:hover {
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4), 0 0 24px rgba(34, 193, 195, 0.65);
-  transform: translateY(-2px);
+  background: var(--color-accent-dark);
   text-decoration: none;
 }
 
 .content-section {
   max-width: var(--max-width);
-  padding: 2rem 2.25rem;
+  padding: 1.25rem 2.5rem;
 }
 
 .content-section h2 {
   margin-top: 0;
 }
 
-/* ---------- Highlight stat strip (About page) ---------- */
+/* ---------- Home page: intro / research focus / explore / contact CTA ---------- */
 
-.stat-strip {
-  max-width: var(--max-width);
-  margin: 0 auto 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.stat-block {
-  flex: 1 1 140px;
-  padding: 1.1rem 1rem;
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.1rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--color-accent-skyblue), var(--color-accent-cyan));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.stat-label {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-/* ---------- About split-screen (bio + quick facts) ---------- */
-
-.about-split {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-@media (min-width: 720px) {
-  .about-split {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-.about-bio {
-  padding: 2rem 2.25rem;
-}
-
-.quick-facts {
-  padding: 1.5rem 1.75rem;
-}
-
-.quick-facts h2 {
-  margin-top: 0;
-  font-size: 1.15rem;
-}
-
-.quick-facts dl {
+.intro-section p {
   margin: 0;
 }
 
-.quick-facts dt {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-accent-skyblue);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.quick-facts dd {
-  margin: 0 0 1rem;
-  color: var(--color-text-muted);
+.news-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-rule);
 }
 
-.quick-facts dd:last-child {
-  margin-bottom: 0;
+.news-item:first-child {
+  border-top: none;
+}
+
+.news-date {
+  flex: 0 0 5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.news-item p {
+  margin: 0;
+  flex: 1;
+}
+
+.focus-card,
+.explore-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.focus-card h3,
+.explore-card h3 {
+  margin: 0;
+}
+
+.explore-card {
+  color: var(--color-text);
+}
+
+.explore-card:hover {
+  border-color: var(--color-rule-accent);
+  text-decoration: none;
+}
+
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta .hero-ctas {
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 /* ---------- Links list ---------- */
@@ -386,14 +328,11 @@ section + section {
 
 .publication,
 .project {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-rule);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: border-color 0.2s ease;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -401,9 +340,7 @@ section + section {
 
 .publication:hover,
 .project:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(34, 193, 195, 0.45);
+  border-color: var(--color-rule-accent);
 }
 
 .publication h3,
@@ -466,12 +403,12 @@ section + section {
 .badge {
   display: inline-block;
   align-self: flex-start;
-  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-green));
-  color: var(--color-bg-deepblue);
+  background: var(--color-accent);
+  color: #ffffff;
   font-size: 0.78rem;
   font-weight: 700;
   padding: 0.2rem 0.65rem;
-  border-radius: 999px;
+  border-radius: var(--radius);
 }
 
 .publication .authors {
@@ -499,17 +436,16 @@ section + section {
   font-size: 0.88rem;
   font-weight: 600;
   padding: 0.3rem 0.75rem;
-  border: 1px solid var(--color-accent-green);
-  border-radius: 999px;
-  color: var(--color-accent-skyblue);
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  color: var(--color-accent);
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .publication .links a:hover,
 .project .links a:hover {
-  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-green));
-  color: var(--color-bg-deepblue);
-  box-shadow: var(--glow-cyan);
+  background: var(--color-accent);
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -526,20 +462,17 @@ section + section {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent-cyan), var(--color-accent-green));
+  width: 1px;
+  background: var(--color-rule-accent);
 }
 
 .timeline-entry {
   position: relative;
   margin: 0 0 1.25rem 1.25rem;
   padding: 1rem 1.25rem;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-rule);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 
 .timeline-entry:last-child {
@@ -551,18 +484,17 @@ section + section {
   position: absolute;
   left: calc(-1.75rem - 5px);
   top: 1.3rem;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--color-accent-skyblue), var(--color-accent-green));
-  box-shadow: var(--glow-cyan);
+  background: var(--color-accent);
 }
 
 .timeline-entry .date {
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-accent-skyblue);
+  color: var(--color-accent);
   margin-bottom: 0.25rem;
 }
 
@@ -584,13 +516,11 @@ section + section {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: rgba(11, 37, 54, 0.55);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-top: 1px solid var(--glass-border);
+  background: var(--color-ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.75rem 1.25rem;
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   font-size: 0.85rem;
 }
 
