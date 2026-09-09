@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Francisco Teixeira</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="activities.html">Activities</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Francisco Teixeira</h1>
+    <p class="subtitle">Postdoctoral Researcher</p>
+
+    <ul class="links-list">
+      <!-- TODO: replace with a hosted CV PDF URL once available -->
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+      <li><a href="https://scholar.google.com/citations?user=UYrQuTcAAAAJ&hl=en-EN">Google Scholar</a></li>
+      <li><a href="https://www.linkedin.com/in/francisco-teixeira-3a6396144/">LinkedIn</a></li>
+      <li><a href="https://github.com/fsepteixeira">GitHub</a></li>
+      <li><a href="mailto:francisco.sep.teixeira@gmail.com">francisco.sep.teixeira@gmail.com</a></li>
+    </ul>
+
+    <p>
+      Postdoctoral researcher working on deep learning systems for speech processing. My main expertise
+      spans privacy-preserving machine learning — including voice conversion and anonymization, membership
+      inference, and machine unlearning — as well as speech recognition, speaker recognition, and speaker
+      diarization. I recently co-developed CAMÕES, an evaluation benchmark and set of state-of-the-art
+      open-source ASR models for European Portuguese, and led the collection of FalAR, a 5,000-hour
+      speaker-annotated speech corpus (available on Hugging Face). I also recently participated in the
+      development of SVeritas, a robustness benchmark for automatic speaker verification. I am currently
+      the Principal Investigator of the LeaF project (CMU Portugal), focused on machine unlearning in
+      speech foundation models. I hold a PhD from INESC-ID / Instituto Superior Técnico, University of
+      Lisbon (2024), with a visiting research period at the Language Technologies Institute, Carnegie
+      Mellon University.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Francisco Teixeira</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
